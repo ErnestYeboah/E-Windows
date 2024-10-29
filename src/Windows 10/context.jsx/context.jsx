@@ -7,6 +7,8 @@ export default function WindowsGlobalState({ children }) {
   const [weatherSlide, setWeatherSlide] = useState(0);
   const timer = useRef();
   const [showStartMenuPanel, setStartMenuPanel] = useState(false);
+  const [startImageViewer, setStartImageViewer] = useState(false);
+  const [startGallery, setStartGallery] = useState(false);
   const [startWeatherApp, setStartWeatherApp] = useState(false);
   const [cityName, setCityName] = useState("");
   const [radioBtnClicked, setRadioBtnClicked] = useState("");
@@ -37,6 +39,10 @@ export default function WindowsGlobalState({ children }) {
         setCityName,
         radioBtnClicked,
         setRadioBtnClicked,
+        startImageViewer,
+        setStartImageViewer,
+        setStartGallery,
+        startGallery,
       }}
     >
       {children}

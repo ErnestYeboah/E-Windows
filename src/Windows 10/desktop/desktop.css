@@ -458,15 +458,22 @@ img:not(.other img) {
   }
 }
 
-.gallery {
+.gallery__wrapper {
   position: fixed;
   inset: 0;
   background-color: var(--light-clr);
+  overflow: scroll;
+}
+.nav__btn {
+  display: flex;
+  justify-content: end;
+}
+
+.gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--gap);
   padding: var(--small-padding);
-  overflow: scroll;
 
   .images__card {
     box-shadow: 0px 4px 4px rgba(0 0 0 / 0.2);
@@ -515,11 +522,6 @@ img:not(.other img) {
     }
   }
 
-  .nav__btn {
-    display: flex;
-    justify-content: end;
-  }
-
   .images__slider {
     display: flex;
     width: 100%;
@@ -530,12 +532,12 @@ img:not(.other img) {
       min-width: 100%;
       display: grid;
       align-content: center;
-      border: 1px solid red;
+      border: 1px solid lightgray;
 
       & img {
         min-width: 50%;
         margin-inline: auto;
-        height: calc(var(--parent-height) - 10vh);
+        height: var(--parent-height);
       }
     }
   }

@@ -3,11 +3,23 @@ import imagesData from "./images-data";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { PiLessThanLight } from "react-icons/pi";
 import RadioImagesBtn from "./radio-images";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { WindowsContext } from "../../../context.jsx/context";
 
 export default function ImagesViewer() {
-  const { radioBtnClicked, setRadioBtnClicked } = useContext(WindowsContext);
+  const { radioBtnClicked, setRadioBtnClicked, setStartImageViewer } =
+    useContext(WindowsContext);
+
+  useEffect(() => {
+    if (radioBtnClicked < 0) {
+      setRadioBtnClicked(0);
+    }
+
+    if (radioBtnClicked > imagesData.length - 1) {
+      setRadioBtnClicked(imagesData.length - 1);
+    }
+  }, [radioBtnClicked]);
+
   return (
     <div className="image__viewer">
       <nav className="image__viewer-nav">
@@ -22,7 +34,7 @@ export default function ImagesViewer() {
             className="arrow"
           />
         </div>
-        <NavigationButton />
+        <NavigationButton onClick={() => setStartImageViewer(false)} />
       </nav>
       <div
         style={{ translate: `-${radioBtnClicked}00% 0` }}

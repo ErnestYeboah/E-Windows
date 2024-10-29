@@ -3,9 +3,9 @@
 import { useContext } from "react";
 import { WindowsContext } from "../../context.jsx/context";
 
-function Item({ icon, text, className, to }) {
+function Item({ icon, text, className, to, onClick }) {
   return (
-    <div className={`appcard ${className}`}>
+    <div onClick={onClick} className={`appcard ${className}`}>
       {to ? (
         <a
           className="link__card"
@@ -28,12 +28,22 @@ function Item({ icon, text, className, to }) {
 }
 
 export default function LifeAtGlancePanel() {
-  const { weatherSlide, setStartWeatherApp } = useContext(WindowsContext);
+  const {
+    weatherSlide,
+    setStartWeatherApp,
+    setStartGallery,
+    setStartMenuPanel,
+  } = useContext(WindowsContext);
 
   const styles = {
     translate: `-${weatherSlide}00% 0`,
     transition: "translate 500ms",
   };
+
+  function launchGallery() {
+    setStartGallery(true);
+    setStartMenuPanel(false);
+  }
 
   return (
     <div className="life__at__glance-panel">
@@ -65,7 +75,11 @@ export default function LifeAtGlancePanel() {
           />
         </div>
       </div>
-      <Item className="other" icon="/images/captain.jpg" />
+      <Item
+        className="other"
+        onClick={launchGallery}
+        icon="/images/captain.jpg"
+      />
       <Item
         className="store"
         to="https://playstore.com"

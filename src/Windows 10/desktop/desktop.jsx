@@ -7,7 +7,8 @@ import IntroView from "./intro-view";
 import WeatherApp from "../components/start-menu-modal/weather-app.jsx/weather-app";
 import Gallery from "../components/start-menu-modal/image-viewer-app/gallery";
 export default function WindowsDesktop() {
-  const { setStartMenuPanel, startWeatherApp } = useContext(WindowsContext);
+  const { setStartMenuPanel, startWeatherApp, startGallery } =
+    useContext(WindowsContext);
   return (
     <>
       <IntroView />
@@ -54,7 +55,7 @@ export default function WindowsDesktop() {
         </div>
       </div>
       {startWeatherApp && <WeatherApp />}
-      <Gallery />
+      {startGallery && <Gallery />}
       <StartMenuPanel />
       <TaskBar />
     </>
