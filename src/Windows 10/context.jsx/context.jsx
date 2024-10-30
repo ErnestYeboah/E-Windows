@@ -12,6 +12,14 @@ export default function WindowsGlobalState({ children }) {
   const [startWeatherApp, setStartWeatherApp] = useState(false);
   const [cityName, setCityName] = useState("");
   const [radioBtnClicked, setRadioBtnClicked] = useState("");
+  const [recycleBin, setRecycleBin] = useState([]);
+
+  function deleteItemToRecycleBin(e) {
+    const del = e.key === "Delete";
+    if (del) {
+      console.log("deleted");
+    }
+  }
 
   useEffect(() => {
     timer.current = setInterval(() => {
@@ -43,6 +51,7 @@ export default function WindowsGlobalState({ children }) {
         setStartImageViewer,
         setStartGallery,
         startGallery,
+        deleteItemToRecycleBin,
       }}
     >
       {children}

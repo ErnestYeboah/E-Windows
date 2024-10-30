@@ -26,7 +26,7 @@ export default function Gallery() {
           {imagesData &&
             images.map((item, index) => (
               <ImagesCard
-                onClick={() => launchImageViewer(index)}
+                onDoubleClick={() => launchImageViewer(index)}
                 key={item.id}
                 data={item}
               />

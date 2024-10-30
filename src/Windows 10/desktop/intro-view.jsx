@@ -4,7 +4,7 @@ export default function IntroView() {
   const introText = [
     "Welcome to Windows 10",
     "Thank you for choosing us",
-    "We are setting up for you , please wait a little.....",
+    "We are setting up for you , please wait.....",
     "Setup is almost complete",
     "Your device is ready to use",
     "",
