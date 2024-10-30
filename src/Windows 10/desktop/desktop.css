@@ -69,9 +69,28 @@ img:not(.other img) {
     color: white;
     white-space: nowrap;
     background-color: transparent;
+    position: relative;
+
+    .popup {
+      position: absolute;
+      translate: 3rem -4rem;
+      width: fit-content;
+      background-color: hsla(from var(--light-clr) h s l / 0.7);
+      min-height: 3rem;
+      padding: var(--small-padding);
+      color: var(--text-clr);
+      font-size: 1.2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--fast);
+    }
 
     &:hover {
       background-color: rgba(211, 211, 211, 0.221);
+      .popup {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
 
     p {
@@ -475,10 +494,38 @@ img:not(.other img) {
   gap: var(--gap);
   padding: var(--small-padding);
 
+
   .images__card {
     box-shadow: 0px 4px 4px rgba(0 0 0 / 0.2);
     display: grid;
-    gap: var(--small-padding);
+  grid-template-rows : 30vh 2rem 0fr;
+  gap: 0.3rem;
+  position : relative;
+  transition : var(--fast);
+
+  &:hover {
+    grid-template-rows : 30vh 1fr 1fr;
+  }
+  
+  > *:not(& img) {
+    margin-inline : var(--small-padding);
+    overflow-y : hidden;
+    
+}
+
+  
+
+
+    .change__wallpaper-btn {
+      background-color : black;
+      color : var(--light-clr);
+      border-radius : 10px;
+      width : fit-content;
+      padding : .1em 1em;
+      margin-block-end : .5rem;
+
+      
+    }
 
     & img {
       height: 30vh;
