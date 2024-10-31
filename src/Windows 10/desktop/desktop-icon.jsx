@@ -3,10 +3,12 @@ import { WindowsContext } from "../context.jsx/context";
 
 /* eslint-disable react/prop-types */
 export default function DeskTopIcons({ data, onClick, appState = "Delete" }) {
-  const { recycleBin, setShowRecycleItems } = useContext(WindowsContext);
+  const { recycleBin, setShowRecycleItems, setShowCalculator } =
+    useContext(WindowsContext);
 
   function launchApplication(appName) {
     if (appName === "Recycle Bin") setShowRecycleItems(true);
+    if (appName === "Calculator") setShowCalculator(true);
   }
 
   return (

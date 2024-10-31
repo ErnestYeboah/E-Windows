@@ -18,6 +18,10 @@ export default function WindowsGlobalState({ children }) {
   const [showRecycleItems, setShowRecycleItems] = useState(false);
   const [bgImage, setBgImage] = useState("/images/scorpion.jpg");
   const [desktopIcons, setDesktopIcons] = useState(desktopIconsData);
+  const [showCalculator, setShowCalculator] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [showLoginModal, setShowLoginModal] = useState(true);
+  const [showIntroView, setShowIntroView] = useState(false);
 
   function changeWallPaper(currentImg) {
     setBgImage(currentImg);
@@ -62,6 +66,14 @@ export default function WindowsGlobalState({ children }) {
         showRecycleItems,
         desktopIcons,
         setDesktopIcons,
+        setShowCalculator,
+        showCalculator,
+        userName,
+        setUserName,
+        setShowLoginModal,
+        showLoginModal,
+        showIntroView,
+        setShowIntroView,
       }}
     >
       {children}

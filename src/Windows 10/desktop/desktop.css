@@ -51,6 +51,57 @@
   }
 }
 
+.login__modal {
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/scorpion.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--light-clr);
+  z-index: 300;
+  isolation: isolate;
+  translate: 0 -100%;
+  transition: translate var(--fast);
+
+  &.active {
+    translate: 0 0;
+  }
+
+  &::before {
+    inset: 0;
+    background-color: hsla(240, 75%, 3%, 0.808);
+    z-index: -1;
+  }
+
+  .login__wrapper {
+    display: grid;
+    place-content: center;
+    height: 100%;
+
+    .avatar {
+      --size: 120px;
+      text-align: center;
+      margin-bottom: var(--small-padding);
+
+      & img {
+        width: var(--size);
+        height: var(--size);
+        border-radius: 100vw;
+        margin: 1rem auto;
+      }
+    }
+
+    & input {
+      padding: 0.5em 1em;
+      font-size: 1.5rem;
+      border: none;
+      outline: none;
+      border-radius: 2rem;
+      background-color: rgba(255, 255, 255, 0.747);
+    }
+  }
+}
+
 .desktop {
   background-image: url("/images/spiderman3.jpg");
   background-size: cover;
@@ -70,9 +121,11 @@ img:not(.other img) {
 }
 
 .apps__wrapper {
-  min-height: 20vh;
-  display: grid;
-  gap: var(--gap);
+  height: 90vh;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
   padding-top: 1rem;
 
   .apps {
@@ -182,6 +235,7 @@ img:not(.other img) {
   position: fixed;
   bottom: 4rem;
   left: 0;
+  z-index: 100;
   height: 90vh;
   width: 80%;
   /* background-color: rgba(0 0 0 / 0.8); */
@@ -614,5 +668,42 @@ img:not(.other img) {
     display: grid;
     gap: var(--gap);
     justify-items: start;
+  }
+}
+
+.calculator__app {
+  position: fixed;
+  inset: 2rem 20rem;
+  background-color: black;
+
+  & input {
+    width: 100%;
+    height: 4rem;
+    border: none;
+    background-color: var(--text-clr);
+    color: var(--light-clr);
+    font-size: 2rem;
+    text-align: right;
+    padding-inline-end: var(--small-padding);
+  }
+
+  .keypads {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: var(--small-padding);
+    height: 90%;
+    gap: var(--small-padding);
+  }
+  & button {
+    font-size: 1.7rem;
+    background-color: lightgray;
+
+    &:hover {
+      background-color: rgb(243, 94, 54);
+    }
+
+    &:active {
+      background-color: rgba(243, 93, 24, 0.507);
+    }
   }
 }

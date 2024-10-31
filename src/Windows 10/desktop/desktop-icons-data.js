@@ -32,4 +32,9 @@ export default [
     name: "New Folder",
     hasDelete: true,
   },
+  {
+    image: "/icons/",
+    name: "Calculator",
+    hasDelete: true,
+  },
 ];

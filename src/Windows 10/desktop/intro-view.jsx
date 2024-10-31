@@ -1,8 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { WindowsContext } from "../context.jsx/context";
 
 export default function IntroView() {
+  const { userName } = useContext(WindowsContext);
+
+  const firstName = userName.charAt(0).toUpperCase() + userName.slice(1);
+
   const introText = [
-    "Welcome to Windows 10",
+    `Welcome ${firstName}`,
     "Thank you for choosing us",
     "We are setting up for you , please wait.....",
     "Setup is almost complete",

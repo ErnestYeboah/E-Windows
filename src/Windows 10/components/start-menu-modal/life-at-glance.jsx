@@ -45,6 +45,11 @@ export default function LifeAtGlancePanel() {
     setStartMenuPanel(false);
   }
 
+  function launchWeatherApp() {
+    setStartMenuPanel(false);
+    setStartWeatherApp(true);
+  }
+
   return (
     <div className="life__at__glance-panel">
       <Item className="calendar" icon="/icons/Calendar.png" text="Calendar" />
@@ -60,7 +65,7 @@ export default function LifeAtGlancePanel() {
         text="Microsft Edge"
         icon="/icons/Edge.png"
       />
-      <div onClick={() => setStartWeatherApp(true)} className="weather__system">
+      <div onClick={launchWeatherApp} className="weather__system">
         <div className="slide__system" style={styles}>
           <Item className="weather" text="Rainy" icon="/icons/Rainy.png" />
           <Item
