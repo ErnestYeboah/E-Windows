@@ -22,7 +22,7 @@ export default function ImagesViewer() {
 
   return (
     <div className="image__viewer">
-      <nav className="image__viewer-nav">
+      <nav className="image__viewer-nav navigation__sec">
         <h3>WPS Photos Viewer</h3>
         <div className="arrows">
           <PiLessThanLight

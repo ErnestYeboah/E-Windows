@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useEffect, useRef, useState } from "react";
+import desktopIconsData from "../desktop/desktop-icons-data";
 
 export const WindowsContext = createContext();
+
 export default function WindowsGlobalState({ children }) {
   const [weatherSlide, setWeatherSlide] = useState(0);
   const timer = useRef();
@@ -12,16 +14,14 @@ export default function WindowsGlobalState({ children }) {
   const [startWeatherApp, setStartWeatherApp] = useState(false);
   const [cityName, setCityName] = useState("");
   const [radioBtnClicked, setRadioBtnClicked] = useState(0);
+  const [recycleBin, setRecycleBin] = useState([]);
+  const [showRecycleItems, setShowRecycleItems] = useState(false);
+  const [bgImage, setBgImage] = useState("/images/scorpion.jpg");
+  const [desktopIcons, setDesktopIcons] = useState(desktopIconsData);
 
-const [bgImage , setBgImage] = useState("")
-
-
-function changeWallPaper(currentImg){
-  setBgImage(currentImg)
-}
-
-
-
+  function changeWallPaper(currentImg) {
+    setBgImage(currentImg);
+  }
 
   useEffect(() => {
     timer.current = setInterval(() => {
@@ -55,7 +55,13 @@ function changeWallPaper(currentImg){
         startGallery,
         setBgImage,
         bgImage,
-        changeWallPaper
+        changeWallPaper,
+        setRecycleBin,
+        recycleBin,
+        setShowRecycleItems,
+        showRecycleItems,
+        desktopIcons,
+        setDesktopIcons,
       }}
     >
       {children}
