@@ -26,7 +26,6 @@ export default function WindowsDesktop() {
     setShowCalculator,
     showLoginModal,
     showIntroView,
-    setRecycleBIn,
   } = useContext(WindowsContext);
 
   function deleteItem(currentApp, currentIndex) {
