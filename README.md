@@ -1,8 +1,27 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Windows 10 Clone..
 
-Currently, two official plugins are available:
+Features
+Recycle Bin System
+Photos Viewer App
+Netflix App
+Chrome
+Weather App
+A Calculator
+A Setup Message
+Changing of Desktop Wallpaper
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Recylce Bin system allows a user to delete an icon or item from the desktop the recycle bin.
+
+Photos Viewer App allows a user to browse through their photos
+
+Netflx app allows a user to go the Netflix homepage.
+
+The Weather App provide the current weather forecast of a city or place based on the user's search input.
+
+The calculator also allow users to perform basic calculations .
+
+A Type Writing Setup message to let users know when their device is in ready to use
+
+Also a desktop wallpaper changing system where users can change the desktop wallpaper to any image of their choice.
